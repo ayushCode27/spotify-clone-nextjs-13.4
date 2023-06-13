@@ -11,7 +11,7 @@ interface SidebarItemProps {
 }
 
 const SidebarItem: FC<SidebarItemProps> = props => {
-  const { icon, label, active = -false, href } = props;
+  const { icon:Icon, label, active = false, href } = props;
 
   return (
     <Link
@@ -19,7 +19,8 @@ const SidebarItem: FC<SidebarItemProps> = props => {
       className={twMerge(
         'flex flex-row h-auto items-center w-full gap-x-4 text-md font-medium cursor-pointer hover:text-white transition text-neutral-300 py-1', active && 'text-white'
       )}
-    >{label}</Link>
+      
+    ><Icon size={26}/> <p className='truncate w-full'>{label}</p> </Link>
   );
 };
 
