@@ -1,6 +1,7 @@
 import './globals.css';
 import { Figtree } from 'next/font/google';
 import MainComponent from '@/components/MainComponent';
+import SupabaseProvider from '@/providers/SupabaseProvider';
 
 const font = Figtree({ subsets: ['latin'] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={font.className}>
-        <MainComponent>{children}</MainComponent>
+        <SupabaseProvider>
+          <MainComponent>{children}</MainComponent>
+        </SupabaseProvider>
       </body>
     </html>
   );
