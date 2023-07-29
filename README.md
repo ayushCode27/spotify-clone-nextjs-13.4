@@ -5,3 +5,4 @@
  - Tailwind CSS
  - Radix UI
  - Supabase
+ - Zustand
